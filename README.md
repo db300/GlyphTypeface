@@ -1,0 +1,2 @@
+# GlyphTypeface
+基于GlyphTypeface的字体管理类库
