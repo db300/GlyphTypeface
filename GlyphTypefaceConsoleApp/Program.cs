@@ -14,6 +14,7 @@ namespace GlyphTypefaceConsoleApp
         static void Main(string[] args)
         {
             var files = new DirectoryInfo("..\\..\\..\\testfonts\\").GetFiles();
+            var dtStart = DateTime.Now;
             foreach (var file in files)
             {
                 Console.WriteLine(file.FullName);
@@ -64,6 +65,9 @@ namespace GlyphTypefaceConsoleApp
                 }
             }
 
+            var dtEnd = DateTime.Now;
+            Console.WriteLine($"{files.Length}个字体，生成{files.Length*4}张预览图，共耗时{(dtEnd - dtStart).Milliseconds}毫秒");
+            
             Console.WriteLine("press any key to exit...");
             Console.ReadLine();
         }
