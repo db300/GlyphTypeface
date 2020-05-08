@@ -10,7 +10,7 @@
     var gtm = new iHawkGlyphTypefaceLibrary.GlyphTypefaceManager(<font file name>);
 	var ss = new List<string>
     {
-    	"中华人民共和国",
+    	"这是一个字符串",
 		"the quick brown fox jumps over the lazy dog",
 		"0123456789",
 		"永"
