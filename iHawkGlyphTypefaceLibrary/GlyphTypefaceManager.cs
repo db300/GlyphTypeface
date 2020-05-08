@@ -165,7 +165,7 @@ namespace iHawkGlyphTypefaceLibrary
                     {
                         var geometry = geometryList[i];
                         var advanceWidth = advanceWidthList[i];
-                        if (geometry.IsEmpty()) continue;
+                        //if (geometry.IsEmpty()) continue;
                         dc.PushTransform(new System.Windows.Media.TranslateTransform(offsetX, offsetY));
                         dc.DrawGeometry(brush, null, geometry);
                         dc.Pop(); // get rid of the transform
