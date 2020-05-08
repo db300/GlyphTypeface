@@ -33,9 +33,10 @@ namespace GlyphTypefaceConsoleApp
                     bmp0?.Save($"{file.Name}-{s}.png", ImageFormat.Png);
                 }
 
+                continue;
+
                 gtm.DrawStringTest();
 
-                /*
                 var cgm = gtm.CharacterToGlyphMap;
                 if (cgm != null)
                 {
@@ -44,7 +45,6 @@ namespace GlyphTypefaceConsoleApp
                         Console.WriteLine($"Code: {item.Key}, GID: {item.Value}");
                     }
                 }
-                */
 
                 var fns = gtm.FamilyNames;
                 if (fns != null)
@@ -55,9 +55,6 @@ namespace GlyphTypefaceConsoleApp
                     }
                 }
 
-                var bmp = gtm.RenderSingleCharacter(3000, Color.Black, Color.White, 72);
-                bmp?.Save($"{file.Name}-{3000}.png", ImageFormat.Png);
-                /*
                 var gc = gtm.GlyphCount;
                 Console.WriteLine($"Glyph count: {gc}");
                 for (ushort i = 0; i < gc; i++)
@@ -65,8 +62,10 @@ namespace GlyphTypefaceConsoleApp
                     var bmp = gtm.RenderSingleCharacter(i, Color.Black, Color.White, 72);
                     bmp?.Save($"{file.Name}-{i}.png", ImageFormat.Png);
                 }
-                */
             }
+
+            Console.WriteLine("press any key to exit...");
+            Console.ReadLine();
         }
     }
 }
