@@ -129,6 +129,14 @@ namespace iHawkGlyphTypefaceLibrary
             }
         }
 
+        /// <summary>
+        /// 渲染字符串
+        /// </summary>
+        /// <param name="previewText"></param>
+        /// <param name="backColor">背景色</param>
+        /// <param name="foreColor">前景色</param>
+        /// <param name="fontSize">font size in pixel</param>
+        /// <returns></returns>
         public System.Drawing.Bitmap RenderString(string previewText, System.Drawing.Color backColor, System.Drawing.Color foreColor, int fontSize)
         {
             try
