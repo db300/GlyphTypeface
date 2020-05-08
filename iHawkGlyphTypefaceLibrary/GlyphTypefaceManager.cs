@@ -149,6 +149,7 @@ namespace iHawkGlyphTypefaceLibrary
                 }
 
                 var glyphIndexList = GetGlyphIndexList(previewText);
+                if (glyphIndexList.Count <= 0) return null;
                 var geometryList = glyphIndexList.Select(glyphIndex => _glyphTypeface.GetGlyphOutline(glyphIndex, fontSize, 1d)).ToList();
                 var advanceWidthList = glyphIndexList.Select(glyphIndex => _glyphTypeface.AdvanceWidths[glyphIndex]).ToList();
 
