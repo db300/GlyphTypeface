@@ -73,6 +73,22 @@ namespace iHawkGlyphTypefaceLibrary
             }
         }
 
+        public IDictionary<CultureInfo, string> VersionStrings
+        {
+            get
+            {
+                try
+                {
+                    return _glyphTypeface.VersionStrings;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return null;
+                }
+            }
+        }
+
         #endregion
 
         #region method
@@ -159,6 +175,7 @@ namespace iHawkGlyphTypefaceLibrary
                 var offsetY = fontSize * _glyphTypeface.Baseline;
                 var drawingVisual = new System.Windows.Media.DrawingVisual();
                 var brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(foreColor.R, foreColor.G, foreColor.B));
+                //var pen = new System.Windows.Media.Pen(brush, 0);
                 using (var dc = drawingVisual.RenderOpen())
                 {
                     for (var i = 0; i < geometryList.Count; i++)
