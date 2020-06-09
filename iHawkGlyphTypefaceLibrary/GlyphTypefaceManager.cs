@@ -15,12 +15,25 @@ namespace iHawkGlyphTypefaceLibrary
 
         public GlyphTypefaceManager(string fontFileName)
         {
-            _glyphTypeface = new System.Windows.Media.GlyphTypeface(new Uri(fontFileName));
+            try
+            {
+                _glyphTypeface = new System.Windows.Media.GlyphTypeface(new Uri(fontFileName));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                IsInvalid = true;
+            }
         }
 
         #endregion
 
         #region property
+
+        /// <summary>
+        /// font file invalid tag.
+        /// </summary>
+        public bool IsInvalid { get; set; }
 
         private readonly System.Windows.Media.GlyphTypeface _glyphTypeface;
         private const float Dpi = 96;
